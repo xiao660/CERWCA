@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/completeInfo/completeInfo",
+    "pages/activityList/activityList",
+    "pages/activityDetail/activityDetail",
+    "pages/profile/profile",
+    "pages/about/about",
+    "pages/feedback/feedback",
+    "pages/history/history",
+    "pages/collection/collection",
+    "pages/myCollect/myCollect",
+    "pages/mySignup/mySignup"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3498db",
+    "navigationBarTitleText": "校园活动报名",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#3498db",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/首页.png",
+        "selectedIconPath": "images/sy1.png"
+      },
+      {
+        "pagePath": "pages/activityList/activityList",
+        "text": "活动列表",
+        "iconPath": "images/weibiaoti--copy.png",
+        "selectedIconPath": "images/weibiaoti--copy-copy.png"
+      },
+      {
+        "pagePath": "pages/mySignup/mySignup",
+        "text": "我的报名",
+        "iconPath": "images/报名.png",
+        "selectedIconPath": "images/报名 (1).png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心",
+        "iconPath": "images/我的.png",
+        "selectedIconPath": "images/wd1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

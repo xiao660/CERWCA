@@ -1,0 +1,33 @@
+<view class="container">
+  <!-- 收藏列表 -->
+  <view class="collection-list" wx:if="{{collectionList.length > 0}}">
+    <view class="activity-item" wx:for="{{collectionList}}" wx:key="id" bindtap="goToDetail" data-id="{{item.id}}">
+      <image class="activity-image" src="{{item.coverImage}}" mode="aspectFill"></image>
+      <view class="activity-info">
+        <view class="activity-title">{{item.name}}</view>
+        <view class="info-row">
+          <image src="/images/sy1.png" mode="aspectFit"></image>
+          <text>{{item.time}}</text>
+        </view>
+        <view class="info-row">
+          <image src="/images/sy1.png" mode="aspectFit"></image>
+          <text>{{item.location}}</text>
+        </view>
+        <view class="status-tag {{item.status === '报名中' ? 'status-active' : 'status-ended'}}">
+          {{item.status}}
+        </view>
+      </view>
+      <!-- 取消收藏按钮 -->
+      <view class="uncollect-btn" catchtap="handleUncollect" data-id="{{item.id}}">
+        <image src="/images/收藏-已收藏.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态展示 -->
+  <view class="empty-state" wx:else>
+    <image src="/images/sy1.png" mode="aspectFit"></image>
+    <text>暂无收藏活动</text>
+    <button class="go-activity" bindtap="goToActivityList">去浏览活动</button>
+  </view>
+</view> 

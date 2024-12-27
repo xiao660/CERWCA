@@ -1,0 +1,50 @@
+<view class="container">
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{collectList.length === 0}}">
+    <image src="/images/没有订单.png" mode="aspectFit"></image>
+    <text>暂无收藏记录</text>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="collect-list" wx:if="{{collectList.length > 0}}">
+    <view class="list-header">
+      <text class="header-title">我的收藏</text>
+      <text class="header-count">共{{collectList.length}}条</text>
+    </view>
+
+    <!-- 收藏列表项 -->
+    <view class="collect-item" wx:for="{{collectList}}" wx:key="id">
+      <view class="activity-info" bindtap="goToDetail" data-id="{{item.id}}">
+        <view class="activity-header">
+          <text class="activity-name">{{item.name}}</text>
+          <text class="activity-status {{item.status === '报名中' ? 'status-active' : 'status-ended'}}">
+            {{item.status}}
+          </text>
+        </view>
+        <view class="signup-progress" wx:if="{{item.maxCount > 0}}">
+          <text class="progress-text">报名进度：{{item.signupCount}}/{{item.maxCount}}</text>
+          <view class="progress-bar">
+            <view class="progress-inner" style="width:{{item.signupCount/item.maxCount*100+'%'}}"></view>
+          </view>
+        </view>
+        <view class="info-row">
+          <image src="/images/shijian.png" mode="aspectFit"></image>
+          <text>活动时间：{{item.time}}</text>
+        </view>
+        <view class="info-row">
+          <image src="/images/didian.png" mode="aspectFit"></image>
+          <text>活动地点：{{item.location}}</text>
+        </view>
+        <view class="info-row">
+          <image src="/images/lishijilu.png" mode="aspectFit"></image>
+          <text>收藏时间：{{item.collectTimeStr}}</text>
+        </view>
+      </view>
+      <view class="action-area">
+        <view class="action-btn" catchtap="handleCancelCollect" data-id="{{item.id}}">
+          取消收藏
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
