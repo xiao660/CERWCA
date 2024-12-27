@@ -1,0 +1,66 @@
+<!--pages/mySignup/mySignup.wxml-->
+<view class="container">
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{signupList.length === 0}}">
+    <image src="/images/没有订单.png" mode="aspectFit"></image>
+    <text>暂无报名记录</text>
+  </view>
+
+  <!-- 报名列表 -->
+  <view class="signup-list" wx:if="{{signupList.length > 0}}">
+    <view class="list-header">
+      <text class="header-title">我的报名</text>
+      <text class="header-count">共{{signupList.length}}条</text>
+    </view>
+    
+    <!-- 状态切换标签 -->
+    <view class="status-tabs">
+      <view 
+        class="tab-item {{currentStatus === 'all' ? 'active' : ''}}" 
+        bindtap="switchTab"
+        data-status="all"
+      >全部</view>
+      <view 
+        class="tab-item {{currentStatus === 'active' ? 'active' : ''}}" 
+        bindtap="switchTab"
+        data-status="active"
+      >已报名</view>
+      <view 
+        class="tab-item {{currentStatus === 'cancelled' ? 'active' : ''}}" 
+        bindtap="switchTab"
+        data-status="cancelled"
+      >已取消</view>
+    </view>
+
+    <!-- 报名列表项 -->
+    <view class="signup-item" wx:for="{{filteredList}}" wx:key="id">
+      <image class="activity-cover" src="{{item.coverImage}}" mode="aspectFill"></image>
+      <view class="activity-info" bindtap="goToDetail" data-id="{{item.activityId}}" data-status="{{item.status}}">
+        <text class="activity-name">{{item.activityName}}</text>
+        <view class="info-row">
+          <text>活动时间：{{item.time}}</text>
+        </view>
+        <view class="info-row">
+          <text>活动地点：{{item.location}}</text>
+        </view>
+        <view class="info-row">
+          <text>报名时间：{{item.signupTimeStr}}</text>
+        </view>
+      </view>
+      <view class="action-area">
+        <text class="signup-status {{item.status === '已报名' ? 'status-active' : 'status-cancelled'}}">
+          {{item.status}}
+        </text>
+        <text 
+          class="cancel-btn" 
+          bindtap="handleCancel" 
+          data-id="{{item.id}}"
+          data-activity-id="{{item.activityId}}"
+          wx:if="{{item.status === '已报名' && !item.isCheckedIn}}"
+        >
+          取消报名
+        </text>
+      </view>
+    </view>
+  </view>
+</view>

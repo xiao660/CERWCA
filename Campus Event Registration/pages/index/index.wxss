@@ -1,0 +1,76 @@
+.container {
+  padding: 0;
+  background: #f5f5f5;
+}
+
+/* 轮播图样式 */
+.banner {
+  width: 100%;
+  height: 350rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+  font-size: 32rpx;
+}
+
+/* 热门活动样式 */
+.hot-activities {
+  background: #fff;
+  padding: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+  border-left: 8rpx solid #3498db;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.activity-item image {
+  width: 200rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+  object-fit: contain;
+}
+
+.activity-info {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.activity-name {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.activity-time, .activity-location {
+  font-size: 24rpx;
+  color: #666;
+}

@@ -1,0 +1,101 @@
+.container {
+  padding: 30rpx;
+  background: #fff;
+}
+
+/* Logo区域样式 */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 20rpx;
+}
+
+.app-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 通用标题样式 */
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 30rpx 0 20rpx;
+  padding-left: 20rpx;
+  border-left: 8rpx solid #3498db;
+}
+
+/* 简介区域样式 */
+.intro-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* 功能列表样式 */
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.feature-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.feature-item image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+
+.feature-item text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 联系方式样式 */
+.contact-item {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+.contact-item .label {
+  width: 100rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.contact-item .value {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 版权信息样式 */
+.copyright {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  padding: 40rpx 0 20rpx;
+} 
